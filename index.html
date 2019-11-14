@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="description" content="Kipras Melnikovas portfolio svetainė / aplikacija" />
+		<meta name="author" content="Kipras Melnikovas" />
+		<meta
+			name="keywords"
+			content="Kipras,Melnikovas,portfolio,svetainė,aplikacija,website,app,personal"
+		/>
+		<title>Kipras Melnikovas — kipras.org</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+		/>
+
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				max-height: 100vh;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			a:visited {
+				text-decoration: none;
+			}
+
+			ul {
+				list-style-type: none;
+			}
+
+			.container {
+				max-width: 35%;
+				margin: auto;
+
+				display: grid;
+
+				grid-template-columns: 1fr 3fr;
+				grid-template-rows: auto;
+
+				column-gap: 1em;
+
+				/* justify-items: center; */
+				justify-content: center;
+
+				grid-template-areas:
+					"photo name"
+					"interests info"
+					"links links";
+
+				border: 1px solid #888822;
+				border-radius: 6px; /** calc(1.68px * 4) // 6px; */
+				padding: 1.68em;
+			}
+
+			.photo {
+				width: 100px;
+				height: 100px;
+				border-radius: 100px;
+
+				grid-area: photo;
+			}
+
+			.media-logo {
+				/* width: 75px; */
+				width: auto;
+				height: 40px;
+
+				grid-area: media-logo;
+			}
+
+			.name {
+				grid-area: name;
+			}
+
+			.interests {
+				grid-area: interests;
+				/* margin: 0; */
+				padding-left: 0;
+			}
+
+			.info {
+				grid-area: info;
+			}
+
+			.links {
+				grid-area: links;
+				justify-self: right;
+			}
+
+			.links a:not(:last-child) {
+				margin-right: 1em;
+			}
+
+			@media (max-width: 1200px) {
+				.container {
+					max-width: 60%;
+				}
+			}
+
+			@media (max-width: 800px) {
+				.container {
+					max-width: 70%;
+
+					grid-template-areas:
+						"photo photo"
+						"name name"
+						"interests interests"
+						"info info"
+						"links links";
+
+					text-align: center;
+					justify-items: center;
+				}
+
+				.links {
+					justify-self: center;
+					margin-top: 2em;
+				}
+			}
+
+			@media (max-width: 530px) {
+				.container {
+					max-width: 100%;
+					border: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div style="margin-top: 10em;"></div>
+		<div class="container">
+			<img src="/portrait-md.jpg" alt="Kipras" class="photo" />
+
+			<h1 class="name">Kipras Melnikovas</h1>
+
+			<ul class="interests">
+				<li>Web dev,</li>
+				<li>open&#8209;source</li>
+				<li>& linux</li>
+			</ul>
+
+			<h2 class="info">
+				Sveiki, štai čia jau greitai bus mano portfolio!
+			</h2>
+
+			<nav class="links">
+				<a
+					href="https://github.com/sarpik"
+					target="_blank"
+					rel="noopener"
+					title="Kipras Melnikovas GitHub'e"
+				>
+					<i class="fab fa-3x fa-github"></i>
+				</a>
+
+				<a
+					href="https://linkedin.com/in/kiprasmel"
+					target="_blank"
+					rel="noopener"
+					title="Kipras Melnikovas LinkedIn'e"
+				>
+					<i class="fab fa-3x fa-linkedin"></i>
+				</a>
+
+				<a
+					href="https://www.youtube.com/channel/UCou9oaoHIdLxo4uUzAzy5AA"
+					target="_blank"
+					rel="noopener"
+					title="Kipras Melnikovas YouTube'ėje"
+				>
+					<i class="fab fa-3x fa-youtube"></i>
+				</a>
+			</nav>
+		</div>
+	</body>
+</html>
