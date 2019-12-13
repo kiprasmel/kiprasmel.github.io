@@ -27,7 +27,7 @@
 
 			.wrapper {
 				position: absolute;
-				top: 50%;
+				top: 47%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 				text-align: center;
@@ -37,11 +37,14 @@
 				text-decoration: none;
 				color: #ce416d;
 				font-weight: 500;
-				border-bottom: 1px solid #ce416d;
+				/* border-bottom: 1px solid #ce416d; */
+
+				transition: all 0.2s ease-in-out;
 			}
 
 			a:hover {
-				background: rgba(206, 65, 109, 0.1);
+				/* background: rgba(206, 65, 109, 0.1); */
+				transition: all 0.2s ease-in-out;
 			}
 
 			.name {
@@ -51,20 +54,93 @@
 				color: #000;
 				background: rgba(206, 65, 109, 0.4);
 			}
+
+			.urls-list {
+				list-style-type: none;
+				position: absolute;
+				top: -1em;
+				right: 12px; /** -16px + half of the width of the first url from the list */
+				text-align: right;
+			}
+
+			.urls-list > *:not(:last-child) {
+				margin-bottom: 0.4em;
+			}
+
+			/*
+			.urls-list li:nth-child(2)::after {
+				position: absolute;
+				content: "";
+				width: 0px;
+				height: 1px;
+				background: red;
+
+				top: 40px;
+				left: 18px;
+			}
+
+			.urls-list li:nth-child(2):hover::after{
+				width: 20px;
+
+				transition: all 0.5s ease-in-out;
+
+				/* transform-origin: right; *\/
+			}
+			*/
+
+			.urls-list a {
+				position: relative;
+			}
+
+			.urls-list a span::after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+
+				content: "";
+				width: 0%;
+				height: 1px;
+
+				background: #ce416d;
+
+				/* transform: rotateY(180deg); */
+				transition: 0.3s ease-in-out;
+			}
+
+			.urls-list a span:hover::after {
+				width: 100%;
+
+				/* transform: rotateY(180deg); */
+				transition: width 0.3s ease-in-out;
+			}
 		</style>
 	</head>
 	<body>
 		<main class="background">
 			<div class="wrapper">
 				<h1>Hello there</h1>
+
 				<p>
 					I am
 					<span class="name">Kipras Melnikovas</span>
 				</p>
-				<p>
-					Check me out
-					<a href="https://github.com/sarpik">at GitHub</a>
-				</p>
+
+				<div style="position: relative;">
+					Check me out at
+					<!-- <span style="color: #ce416d;">at</span> -->
+					<span style="opacity:0;">GitHub</span>
+					<ul class="urls-list">
+						<li>
+							<a href="https://github.com/sarpik"><span>GitHub</span></a>
+						</li>
+						<li>
+							<a href="https://linkedin.com/in/kiprasmel"><span>LinkedIn</span></a>
+						</li>
+						<!-- <li>
+							<a href="https://www.youtube.com/channel/UCou9oaoHIdLxo4uUzAzy5AA"><span>YouTube</span></a>
+						</li> -->
+					</ul>
+				</div>
 			</div>
 		</main>
 	</body>
