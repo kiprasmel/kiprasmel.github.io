@@ -115,10 +115,14 @@
 			.links {
 				grid-area: links;
 				justify-self: right;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 
-			.links a:not(:last-child) {
-				margin-right: 1em;
+			.links * + * {
+				margin-left: 1em;
 			}
 
 			@media (max-width: 1200px) {
@@ -234,6 +238,17 @@
 					title="Kipras Melnikovas Twitch'e"
 				>
 					<i class="fa-colored fab fa-3x fa-twitch"></i>
+				</a>
+
+				<!-- <span style="height: 100%; width: 2px; background: black; display: inline-block; "></span> -->
+
+				<a
+					href="/kipras.gpg"
+					target="_blank"
+					rel="noopener"
+					title="GPG Key"
+				>
+					<i class="fa-colored fas fa-3x fa-key"></i>
 				</a>
 			</nav>
 		</div>
