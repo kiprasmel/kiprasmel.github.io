@@ -114,15 +114,42 @@
 
 			.links {
 				grid-area: links;
-				justify-self: right;
 
+				display: flex;
+				justify-content: right;
+
+				flex-direction: row-reverse;
+
+			}
+			@media (max-width: 800px) {
+				.links {
+					justify-self: center;
+					align-self: end;
+
+					flex-direction: column;
+
+					margin-bottom: 1em;
+				}
+			}
+
+			.links div {
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				margin-right: 0.75em;
+			}
+			.links * + * {
+				margin-left: 0.75em;
+
+			}
+			@media (max-width: 800px) {
+				.links * + * {
+					margin-top: 0.25em;
+				}
 			}
 
-			.links * + * {
-				margin-left: 1em;
+			.links div * + * {
+				margin-left: 0.75em;
 			}
 
 			@media (max-width: 1200px) {
@@ -163,11 +190,6 @@
 					margin: 0;
 				}
 
-				.links {
-					justify-self: center;
-					margin-top: 2em;
-				}
-
 				.wrapper {
 					max-width: 100%;
 					/* width: 100%; */
@@ -195,6 +217,39 @@
 			</h2>
 
 			<nav class="links">
+				<div>
+				<a
+					href="mailto:kipras@kipras.org"
+					rel="noopener"
+	 				title="Email Kipras Melnikovas"
+				>
+					<i class="fa-colored fas fa-3x fa-envelope"></i>
+				</a>
+
+				<a
+					href="/kipras.gpg.txt"
+					target="_blank"
+					rel="noopener"
+					title="GPG Key"
+				>
+					<i class="fa-colored fas fa-3x fa-key"></i>
+				</a>
+
+				<!--
+				<span style="height: 64px; width: 2px; background: black; display: inline-block; "></span>
+				-->
+
+				<a
+					href="http://kiprasmel.github.io/notes"
+					target="_blank"
+					rel="noopener"
+					title="Notes"
+				>
+                    <img src="https://raw.githubusercontent.com/kiprasmel/notes/master/favicon.ico" />
+				</a>
+				</div>
+
+				<div>
 				<a
 					href="https://github.com/kiprasmel"
 					target="_blank"
@@ -239,26 +294,7 @@
 				>
 					<i class="fa-colored fab fa-3x fa-twitch"></i>
 				</a>
-
-				<a
-					href="/kipras.gpg.txt"
-					target="_blank"
-					rel="noopener"
-					title="GPG Key"
-				>
-					<i class="fa-colored fas fa-3x fa-key"></i>
-				</a>
-
-				<span style="height: 100%; width: 2px; background: black; display: inline-block; "></span>
-
-				<a
-					href="http://kiprasmel.github.io/notes"
-					target="_blank"
-					rel="noopener"
-					title="Notes"
-				>
-					<img src="https://raw.githubusercontent.com/kiprasmel/notes/master/favicon.ico" />
-				</a>
+				</div>
 			</nav>
 		</div>
 		</div>
