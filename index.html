@@ -35,7 +35,7 @@
 			}
 
 			body {
-				max-height: 100vh;
+				min-height: 100vh;
 				color: var(--color);
 			}
 
@@ -56,30 +56,49 @@
 			}
 
 			.wrapper {
-				position: relative;
-				max-width: 35%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				width: 100%;
 				margin: 0 auto;
-				box-sizing: border-box;
+
+				height: 100%;
+				min-height: 100vh;
+
+				background-color: white;
+			}
+
+			@media(min-width: 1200px) {
+				.wrapper {
+					width: 50vw;
+				}
 			}
 
 			.container {
-				/* max-width: 35%; */
 				display: grid;
 				grid-template-columns: 1fr 3fr;
 				grid-template-rows: auto;
 				column-gap: 1em;
-				/* justify-items: center; */
+
 				justify-content: center;
 				grid-template-areas:
 					"photo name"
-					"interests info"
+					"-     info"
 					"links links";
-				/* border: 1px solid #888822; */
-				/* border-radius: 6px; */ /** calc(1.68px * 4) // 6px; */
+
 				padding: 1.68em;
-				background-color: var(--primary);
-				box-shadow: 25px 25px var(--secondary);
-				margin-top: 10em;
+				margin: auto;
+			}
+
+			@media(min-width: 1200px) {
+				.container {
+					border: 3px solid black;
+					border-radius: 9px;
+					margin-top: 10vh;
+
+					padding: 1.66em 2.56em;
+				}
 			}
 
 			.photo {
@@ -87,29 +106,22 @@
 				height: 100px;
 				border-radius: 100px;
 
+				margin-top: 18px;
+
 				grid-area: photo;
-			}
-
-			.media-logo {
-				/* width: 75px; */
-				width: auto;
-				height: 40px;
-
-				grid-area: media-logo;
 			}
 
 			.name {
 				grid-area: name;
 			}
 
-			.interests {
-				grid-area: interests;
-				/* margin: 0; */
-				padding-left: 0;
-			}
-
 			.info {
 				grid-area: info;
+
+				margin-top: -36px;
+				margin-bottom: 1.66em;
+
+				max-width: 26ch;
 			}
 
 			.links {
@@ -152,12 +164,6 @@
 				margin-left: 0.75em;
 			}
 
-			@media (max-width: 1200px) {
-				.wrapper {
-					max-width: 60%;
-				}
-			}
-
 			@media (max-width: 800px) {
 				.container {
 					max-width: 100%;
@@ -171,15 +177,9 @@
 						"photo photo"
 						"name name"
 						"info info"
-						"interests interests"
 						"links links";
 					text-align: center;
 					justify-items: center;
-				}
-
-				.container::after {
-					/* visibility: hidden; */
-					display: none;
 				}
 
 				.photo {
@@ -190,11 +190,6 @@
 					margin: 0;
 				}
 
-				.wrapper {
-					max-width: 100%;
-					/* width: 100%; */
-				}
-
 			}
 		</style>
 
@@ -203,18 +198,45 @@
 			see also https://github.com/mikecao/umami
 		-->
 		<script async defer data-website-id="aa7d1cfd-1448-4509-80be-62b6c60da41c" src="https://kowalski.kipras.org/umami.js"></script>
+
 	</head>
 	<body>
 		<div class="wrapper">
 
 		<div class="container">
-			<img src="./portrait-md.jpg" alt="Kipras Melnikovas" class="photo" />
+			<img src="./portrait-md.jpg" class="photo" />
 
 			<h1 class="name">Kipras Melnikovas</h1>
 
-			<h2 class="info">
-				Hey — you'll <s>soon</s> find my portfolio here!
-			</h2>
+			<h2 id="phrase" class="info" title="quote of the day, potentially stolen."></h2>
+			<script>
+				const phrases = [
+					"we do a little computing.",
+					"i like computers. or do i?",
+					"i hate all software equally.",
+					"the singularity is nearer.",
+					"long live entropy.",
+					"ship fast and break things.",
+					"does the tool work for you, or do you work for the tool?",
+					"measure turned target is a bad measure.",
+					/**
+					 * incentives
+					 *
+					 */
+				]
+
+				setPhrase()
+
+				function setPhrase() {
+					const phrase = takeOne(phrases)
+					document.getElementById("phrase").textContent = phrase
+				}
+
+				function takeOne(arr) {
+					const idx = Math.floor(Math.random() * 1e9) % arr.length 
+					return arr[idx]
+				}
+			</script>
 
 			<nav class="links">
 				<div>
@@ -245,7 +267,7 @@
 					rel="noopener"
 					title="Notes"
 				>
-                    <img src="https://raw.githubusercontent.com/kiprasmel/notes/master/favicon.ico" />
+					<img src="https://raw.githubusercontent.com/kiprasmel/notes/master/favicon.ico" width="48" height="48" />
 				</a>
 				</div>
 
@@ -297,7 +319,7 @@
 				</div>
 			</nav>
 		</div>
+
 		</div>
 	</body>
-
 </html>
