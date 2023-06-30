@@ -189,7 +189,13 @@
 				.name {
 					margin: 0;
 				}
+			}
 
+			/* just too many links at this point, design on bigger screens looks meh. if u need gpg key u'll find it anyway */
+			@media (min-width: 801px) {
+				.hide-on-single-layer {
+					display: none;
+				}
 			}
 		</style>
 
@@ -245,6 +251,7 @@
 				</a>
 
 				<a
+					class="hide-on-single-layer"
 					href="/kipras.gpg.txt"
 					target="_blank"
 					rel="noopener"
@@ -311,6 +318,15 @@
 					title="Kipras Melnikovas on Twitch"
 				>
 					<i class="fa-colored fab fa-3x fa-twitch"></i>
+				</a>
+
+				<a
+					href="https://open.spotify.com/user/kiprasmel"
+					target="_blank"
+					rel="noopener"
+					title="Kipras Melnikovas on Spotify"
+				>
+					<i class="fa-colored fab fa-3x fa-spotify"></i>
 				</a>
 				</div>
 			</nav>
