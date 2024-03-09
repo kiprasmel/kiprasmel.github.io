@@ -191,6 +191,16 @@
 				}
 			}
 
+			.blog {
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.blog a {
+				text-decoration: underline;
+			}
 		</style>
 
 		<!-- https://github.com/umami-software/umami -->
@@ -199,7 +209,7 @@
 	<body>
 		<div class="wrapper">
 
-		<div class="container">
+		<main class="container">
 			<img src="./portrait-md.jpg" class="photo" />
 
 			<h1 class="name">Kipras Melnikovas</h1>
@@ -300,8 +310,14 @@
 
 				</div>
 			</nav>
+		</main>
+
 		</div>
 
+		<div class="blog">
+			<h2>
+				check out my <a href="https://blog.kipras.org">blog</a>
+			</h2>
 		</div>
 	</body>
 </html>
